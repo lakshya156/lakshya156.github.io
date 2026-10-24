@@ -249,7 +249,7 @@
   ].filter(Boolean);
   $("#contactLinks").innerHTML = links.length
     ? links.map((l) => `<a class="c-link" href="${esc(l.href)}" ${l.href.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}>${esc(l.label)} <span class="arr">↗</span></a>`).join("")
-    : `<span class="mono mute">Add your email and links in data.js → CONFIG</span>`;
+    : "";
 
   /* ════════════ ROUTER ════════════ */
   const ROUTES = ["home", "systems", "approach", "stack", "contact"];

@@ -7,7 +7,7 @@ window.CONFIG = {
   // Fill these in. Any link left empty is hidden on the page.
   email: "",          // e.g. "lakshya@example.com"
   linkedin: "",       // e.g. "https://www.linkedin.com/in/your-handle"
-  github: "",         // e.g. "https://github.com/your-handle"
+  github: "https://github.com/lakshya156",
   resume: "",         // e.g. "resume.pdf" (put the file next to index.html)
 };
 
