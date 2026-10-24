@@ -20,12 +20,13 @@
 <div class="spot" aria-hidden="true"></div>
 
 <header class="nav">
-  <a href="#top" class="brand"><span class="brand-dot"></span>lakshya<span class="mute">.jaiswal</span></a>
-  <nav class="nav-links" aria-label="Sections">
-    <a href="#systems">Systems</a>
-    <a href="#principles">Principles</a>
-    <a href="#stack">Stack</a>
-    <a href="#contact">Contact</a>
+  <a href="#/" class="brand"><span class="brand-dot"></span>lakshya<span class="mute">.jaiswal</span></a>
+  <nav class="nav-links" aria-label="Pages">
+    <a href="#/" data-route="home"><span class="mono">00</span>Home</a>
+    <a href="#/systems" data-route="systems"><span class="mono">01</span>Systems</a>
+    <a href="#/approach" data-route="approach"><span class="mono">02</span>Approach</a>
+    <a href="#/stack" data-route="stack"><span class="mono">03</span>Stack</a>
+    <a href="#/contact" data-route="contact"><span class="mono">04</span>Contact</a>
   </nav>
   <div class="nav-right">
     <span class="clock mono" id="clock">IST --:--</span>
@@ -34,133 +35,135 @@
 </header>
 
 <main id="top">
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-copy">
-      <p class="eyebrow mono"><span class="pulse"></span> Taking new builds · n8n · Claude · AI agents</p>
-      <h1 class="display">
-        <span class="line"><span>Lakshya</span></span>
-        <span class="line"><span><em>Jaiswal</em></span></span>
-      </h1>
-      <p class="lede">I build automation systems that do the work of a full team. They find leads, negotiate prices, answer on WhatsApp and listen to LinkedIn, and they keep running after I log off.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#systems">See the systems <span aria-hidden="true">→</span></a>
-        <button class="btn btn-ghost" id="runHero"><span class="play" aria-hidden="true">▶</span> Execute workflow</button>
+  <!-- HOME -->
+  <section class="view" data-view="home" aria-label="Home">
+    <div class="home">
+      <div class="home-top">
+        <div class="hero-copy">
+          <p class="eyebrow mono"><span class="pulse"></span> Taking new builds · n8n · Claude · AI agents</p>
+          <h1 class="display">
+            <span class="line"><span>Lakshya</span></span>
+            <span class="line"><span><em>Jaiswal</em></span></span>
+          </h1>
+          <p class="lede">I build automation systems that do the work of a full team. They find leads, negotiate prices, answer on WhatsApp and listen to LinkedIn, and they keep running after I log off.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#/systems">Explore 10 systems <span aria-hidden="true">→</span></a>
+            <button class="btn btn-ghost" id="runHero"><span class="play" aria-hidden="true">▶</span> Execute workflow</button>
+          </div>
+        </div>
+        <div class="metrics" aria-label="Numbers">
+          <div class="metric"><span class="m-num" data-count="319">0</span><span class="m-label">workflows on one production n8n server</span></div>
+          <div class="metric"><span class="m-num" data-count="117">0</span><span class="m-label">nodes in my largest autonomous agent</span></div>
+          <div class="metric"><span class="m-num" data-count="12.2" data-suffix="k" data-dec="1">0</span><span class="m-label">LinkedIn leads scored by an AI qualifier</span></div>
+          <div class="metric"><span class="m-num" data-count="0.029" data-prefix="$" data-dec="3">0</span><span class="m-label">tooling cost per lead pushed to a campaign</span></div>
+        </div>
+      </div>
+      <div class="canvas-wrap" id="canvasWrap">
+        <div class="canvas-bar mono">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="canvas-title">orm-lead-engine.json</span>
+          <span class="canvas-hint">drag the nodes</span>
+        </div>
+        <div class="flow-scroll"><svg class="flow" id="flow" role="img" aria-label="Interactive diagram of the reputation-risk lead engine"></svg></div>
+        <div class="terminal mono short" id="terminal" aria-live="polite"></div>
       </div>
     </div>
-
-    <div class="canvas-wrap" id="canvasWrap">
-      <div class="canvas-bar mono">
-        <span class="dots"><i></i><i></i><i></i></span>
-        <span class="canvas-title">orm-lead-engine.json</span>
-        <span class="canvas-hint">drag the nodes</span>
-      </div>
-      <div class="flow-scroll"><svg id="flow" viewBox="0 0 1200 460" role="img" aria-label="Interactive diagram of a lead-engine workflow: schedule, fetch news, scrape, AI judge, identity match, prospect sheet">
-        <defs>
-          <pattern id="dotgrid" width="24" height="24" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="1" fill="var(--grid)"/>
-          </pattern>
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="4" result="b"/>
-            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-          </filter>
-        </defs>
-        <rect width="1200" height="460" fill="url(#dotgrid)"/>
-        <g id="edges"></g>
-        <g id="packets"></g>
-        <g id="nodes"></g>
-      </svg></div>
-      <div class="terminal mono" id="terminal" aria-live="polite">
-        <div class="t-line t-dim">// press "Execute workflow" to replay how this engine runs</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- METRICS -->
-  <section class="metrics" aria-label="Numbers">
-    <div class="metric"><span class="m-num" data-count="319">0</span><span class="m-label">workflows on one production n8n server</span></div>
-    <div class="metric"><span class="m-num" data-count="117">0</span><span class="m-label">nodes in my largest autonomous agent</span></div>
-    <div class="metric"><span class="m-num" data-count="12.2" data-suffix="k" data-dec="1">0</span><span class="m-label">LinkedIn leads scored by an AI qualifier</span></div>
-    <div class="metric"><span class="m-num" data-count="0.029" data-prefix="$" data-dec="3">0</span><span class="m-label">tooling cost per lead pushed to a campaign</span></div>
   </section>
 
   <!-- SYSTEMS -->
-  <section class="section" id="systems">
-    <div class="section-head">
-      <span class="tag mono">01 / systems</span>
-      <h2 class="h2">Systems in production, <em>not demos.</em></h2>
-      <p class="sub">Each one runs on a schedule or a webhook and handles real money or real leads. Click one to see how it's wired and what was hard about it.</p>
+  <section class="view" data-view="systems" aria-label="Systems">
+    <div class="page">
+      <div class="page-head">
+        <span class="tag mono">01 / systems</span>
+        <h2 class="h2">Ten systems. <em>Run any of them.</em></h2>
+        <p class="sub">Every one of these runs in production on a schedule or a webhook. Pick one, press Execute and watch it run, or drag the nodes around.</p>
+      </div>
+      <div class="explorer">
+        <aside class="ex-side">
+          <div class="filters mono" role="tablist" aria-label="Filter systems" id="filters">
+            <button class="chip is-on" data-f="all">All</button>
+            <button class="chip" data-f="agent">AI agents</button>
+            <button class="chip" data-f="leads">Lead engines</button>
+            <button class="chip" data-f="infra">Infra &amp; ops</button>
+          </div>
+          <ol class="ex-list" id="exList"></ol>
+        </aside>
+        <div class="ex-stage">
+          <div class="canvas-wrap" id="exCanvas">
+            <div class="canvas-bar mono">
+              <span class="dots"><i></i><i></i><i></i></span>
+              <span class="canvas-title" id="exFile">workflow.json</span>
+              <span class="canvas-hint">drag the nodes</span>
+              <button class="run-btn mono" id="exRun"><span class="play" aria-hidden="true">▶</span> Execute</button>
+            </div>
+            <div class="flow-scroll"><svg class="flow" id="exFlow" role="img"></svg></div>
+            <div class="terminal mono short" id="exTerm" aria-live="polite"></div>
+          </div>
+          <article class="ex-detail" id="exDetail"></article>
+        </div>
+      </div>
     </div>
-    <div class="filters mono" role="tablist" aria-label="Filter systems" id="filters">
-      <button class="chip is-on" data-f="all">All</button>
-      <button class="chip" data-f="agent">AI agents</button>
-      <button class="chip" data-f="leads">Lead engines</button>
-      <button class="chip" data-f="infra">Infra &amp; ops</button>
-    </div>
-    <div class="grid" id="systemGrid"></div>
   </section>
 
-  <!-- PRINCIPLES -->
-  <section class="section" id="principles">
-    <div class="section-head">
-      <span class="tag mono">02 / principles</span>
-      <h2 class="h2">Lessons from <em>production.</em></h2>
+  <!-- APPROACH -->
+  <section class="view" data-view="approach" aria-label="Approach">
+    <div class="page">
+      <div class="page-head">
+        <span class="tag mono">02 / approach</span>
+        <h2 class="h2">Lessons from <em>production.</em></h2>
+      </div>
+      <ol class="principles">
+        <li>
+          <span class="p-num mono">01</span>
+          <div><h3>Let the model judge. Let code do the math.</h3>
+          <p>My negotiation agent once quoted the wrong prices. The fix was to keep the language model on tone and strategy and move every number into deterministic JavaScript. Now a pricing bug is a code bug, so it can be tested.</p></div>
+        </li>
+        <li>
+          <span class="p-num mono">02</span>
+          <div><h3>Measure, then claim.</h3>
+          <p>Cost per lead, hit rates, API limits: I count them from execution logs before they go in a report. A guess about volume is a bug that just hasn't shown up yet.</p></div>
+        </li>
+        <li>
+          <span class="p-num mono">03</span>
+          <div><h3>Chase the first error, not the loudest.</h3>
+          <p>A Telegram bot started throwing "query too old" errors. The real cause was a deleted Google Sheet one step upstream, which backed up the update queue for 55 minutes. Every fix since then starts from the first failure in the timeline.</p></div>
+        </li>
+        <li>
+          <span class="p-num mono">04</span>
+          <div><h3>Fail loud. Never fail silent.</h3>
+          <p>Each system ships with its guards: a global error workflow, a balance guard for AI credits, login alerts and regression tests that replay live traffic with sending turned off.</p></div>
+        </li>
+      </ol>
     </div>
-    <ol class="principles">
-      <li>
-        <span class="p-num mono">01</span>
-        <div><h3>Let the model judge. Let code do the math.</h3>
-        <p>My negotiation agent once quoted the wrong prices. The fix was to keep the language model on tone and strategy and move every number into deterministic JavaScript. Now a pricing bug is a code bug, so it can be tested.</p></div>
-      </li>
-      <li>
-        <span class="p-num mono">02</span>
-        <div><h3>Measure, then claim.</h3>
-        <p>Cost per lead, hit rates, API limits: I count them from execution logs before they go in a report. A guess about volume is a bug that just hasn't shown up yet.</p></div>
-      </li>
-      <li>
-        <span class="p-num mono">03</span>
-        <div><h3>Chase the first error, not the loudest.</h3>
-        <p>A Telegram bot started throwing "query too old" errors. The real cause was a deleted Google Sheet one step upstream, which backed up the update queue for 55 minutes. Every fix since then starts from the first failure in the timeline.</p></div>
-      </li>
-      <li>
-        <span class="p-num mono">04</span>
-        <div><h3>Fail loud. Never fail silent.</h3>
-        <p>Each system ships with its guards: a global error workflow, a balance guard for AI credits, login alerts and regression tests that replay live traffic with sending turned off.</p></div>
-      </li>
-    </ol>
   </section>
 
   <!-- STACK -->
-  <section class="section" id="stack">
-    <div class="section-head">
-      <span class="tag mono">03 / stack</span>
-      <h2 class="h2">The tools I <em>wire together.</em></h2>
+  <section class="view" data-view="stack" aria-label="Stack">
+    <div class="page">
+      <div class="page-head">
+        <span class="tag mono">03 / stack</span>
+        <h2 class="h2">The tools I <em>wire together.</em></h2>
+      </div>
+      <div class="stack" id="stackList"></div>
+      <div class="marquee mono" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
     </div>
-    <div class="stack" id="stackList"></div>
-    <div class="marquee mono" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
   </section>
 
   <!-- CONTACT -->
-  <section class="section contact" id="contact">
-    <span class="tag mono">04 / contact</span>
-    <h2 class="contact-title">Got a process that eats<br>your team's week? <em>Let's automate it.</em></h2>
-    <div class="contact-links" id="contactLinks"></div>
+  <section class="view" data-view="contact" aria-label="Contact">
+    <div class="page contact">
+      <span class="tag mono">04 / contact</span>
+      <h2 class="contact-title">Got a process that eats<br>your team's week? <em>Let's automate it.</em></h2>
+      <div class="contact-links" id="contactLinks"></div>
+      <footer class="footer mono">
+        <span>© <span id="yr"></span> Lakshya Jaiswal</span>
+        <span class="mute">Hand-built HTML, CSS and JS · GSAP · no templates</span>
+      </footer>
+    </div>
   </section>
+
+  <a class="next-page mono" id="nextPage" href="#/systems"><span class="np-k">next</span> <span id="nextLabel">Systems</span> <span aria-hidden="true">→</span></a>
 </main>
-
-<footer class="footer mono">
-  <span>© <span id="yr"></span> Lakshya Jaiswal</span>
-  <span class="mute">Hand-built HTML, CSS and JS · GSAP · Lenis · no templates</span>
-</footer>
-
-<!-- System detail drawer -->
-<div class="drawer" id="drawer" aria-hidden="true">
-  <div class="drawer-scrim" data-close></div>
-  <article class="drawer-panel" role="dialog" aria-modal="true" aria-labelledby="dTitle">
-    <button class="drawer-x mono" data-close aria-label="Close">esc ✕</button>
-    <div id="drawerBody"></div>
-  </article>
-</div>
 
 <!-- Command palette -->
 <div class="palette" id="palette" aria-hidden="true">
@@ -173,9 +176,8 @@
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="data.js"></script>
+<script src="graphs.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
